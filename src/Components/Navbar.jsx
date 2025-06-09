@@ -7,9 +7,9 @@ const Navbar = () => {
 const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
-    <nav className="sticky z-99 top-0 bg-gradient-to-b from-purple-950 to-purple-500  text-white p-4 shadow-lg">
+    <nav className="sticky z-99 top-0 bg-gradient-to-b from-purple-950 to-purple-500  text-white p-4 shadow-lg ">
       <Flex justify="between" align="center" maxWidth="6xl" className=" mx-auto">
-        
+
         <Link
           to="/home"
           className="text-2xl font-bold hover:text-white-200 transition-colors"
@@ -28,6 +28,7 @@ const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
           >
             Products
           </NavLink>
+        
 
           <NavLink to="/" className="flex items-center space-x-6">
             {" "}

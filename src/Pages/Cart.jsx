@@ -14,17 +14,19 @@ import {
   Heading,
   Text,
 } from "@radix-ui/themes";
+import { useMemo } from "react";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
 
-  const Total = () => {
-    console.log("calculating");
+  const total = useMemo(() => {
+      console.log("Recalculating total because cartItems changed:", cartItems);
+
     return cartItems
       .reduce((acc, item) => acc + item.price * item.quantity, 0)
       .toFixed(2);
-  };
+    }, [cartItems]);
 
   return (
     <Container className="max-w-4xl mx-auto p-4">
@@ -128,7 +130,7 @@ const Cart = () => {
             justify={"center"}
             className="gap-2 items-center"
           >
-            Total: ${Total()}
+            Total: ${total}
             <Link
               to={"/payment"}
               className="mt-4 px-6 py-2 w-fit rounded bg-indigo-600 hover:bg-indigo-900 text-white shadow-2xl"
