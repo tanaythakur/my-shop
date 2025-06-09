@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
       </AspectRatio>
 
       <div className="p-4">
-        <Text className="font-bold text-center text-lg mb-2 text-gray-800">
+        <Text align="center" mb="2" className="text-lg text-gray-800">
           {product.name}
         </Text>
         <Text className="text-sm text-gray-600 mb-2">{product.category}</Text>

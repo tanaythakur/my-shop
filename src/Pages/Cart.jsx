@@ -30,18 +30,18 @@ const Cart = () => {
 
   return (
     <Container className="max-w-4xl mx-auto p-4">
-      <Heading
+      <Heading align="center" mb="6"
         size={"8"}
-        className="text-3xl text-center font-semibold mb-6 text-gray-700"
+        className="text-3xl font-semibold text-gray-700"
       >
         Cart
       </Heading>
 
       <Box mt={"8"} className="text-center py-12">
         {cartItems.length === 0 ? (
-          <Flex direction={"column"} className="text-6xl mb-4 text-gray-400">
+          <Flex direction={"column"} mb="6" className="text-6xl text-gray-400">
             🛒
-            <Text className="text-gray-500 pt-6">Your cart is empty.</Text>
+            <Text pt="6" className="text-gray-500">Your cart is empty.</Text>
             <Flex justify={"center"}>
               <Link
                 to="/products"
@@ -72,7 +72,7 @@ const Cart = () => {
                 <Text className="text-gray-600">${item.price.toFixed(2)}</Text>
               </Flex>
 
-              <Flex className="flex items-center gap-2">
+              <Flex align="center" gap="2">
                 <Button
                   variant="soft"
                   onClick={() => dispatch(decreaseQuantity(item.id))}
@@ -125,10 +125,9 @@ const Cart = () => {
         )}
 
         {cartItems.length > 0 && (
-          <Flex
+          <Flex gap="2" align="center"
             direction={"column"}
             justify={"center"}
-            className="gap-2 items-center"
           >
             Total: ${total}
             <Link

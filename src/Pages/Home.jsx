@@ -5,6 +5,7 @@ import SafePayments from "../assets/HomePageImages/payment-protection.png";
 import {
   Box,
   Button,
+  Card,
   Container,
   Flex,
   Grid,
@@ -17,7 +18,7 @@ const Home = () => {
   return (
     <Container m="auto" p="4" className="max-w-6xl">
       <Box className="text-center mx-auto p-4">
-        <Heading size="9" mb="5" className="font-bold text-gray-700">
+        <Heading weight="bold" size="9" mb="5" className="text-gray-700">
           Welcome to MyShop
         </Heading>
 
@@ -32,7 +33,6 @@ const Home = () => {
         </Text>
 
         <Flex
-          direction="column"
           justify="center"
           align="center"
           pt="6"
@@ -61,10 +61,10 @@ const Home = () => {
             alt="delivery icon"
             className="mx-auto w-10 h-10 mb-3"
           />
-          <h3 className="text-lg font-black">Free Delivery</h3>
-          <p className="text-gray-500 text-center pt-2">
-            Free Shiping on all orders over 50$
-          </p>
+          <Heading className="text-lg font-black">Free Delivery</Heading>
+          <Text className="text-gray-500 text-center pt-2">
+            Free Shipping on all orders over 50$
+          </Text>
         </Section>
 
         <Section

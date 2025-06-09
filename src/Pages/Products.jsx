@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../Components/ProductCard";
 import { useEffect } from "react";
 import { setProducts } from "../Slices/Products/ProductsSlice";
-import { Container, Heading } from "@radix-ui/themes";
+import { Container, Grid, Heading } from "@radix-ui/themes";
 
 
 const Products = () => {
@@ -22,7 +22,7 @@ const Products = () => {
   return (
     <Container className="text-center max-w-6xl mx-auto p-4">
       <Heading className=" text-3xl text-gray-800 font-bold mb-2 pb-6">Products</Heading>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 rounded-full">
         {Array.isArray(products) &&
           products?.map((product) => (

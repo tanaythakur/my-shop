@@ -6,7 +6,7 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
   
   return (
-    <Flex align="center" className=" p-4 border-b border-gray-200 last:border-b-0">
+    <Flex align="center" p="4"  className="border-b border-gray-200 last:border-b-0">
       <img
         src={item.image}
         alt={item.name}
@@ -14,12 +14,12 @@ const CartItem = ({ item }) => {
       />
 
       <Flex className="flex-1">
-        <Heading className="font-bold text-lg text-gray-800">{item.name}</Heading>
+        <Heading weight="bold" className="text-lg text-gray-800">{item.name}</Heading>
         <Text className="text-gray-600">{item.category}</Text>
         <Text className="text-green-600 font-bold">${item.price}</Text>
       </Flex>
 
-      <Flex className="flex items-center space-x-3">
+      <Flex align="center" gapX="3" className="space-x-3">
         <Button
           onClick={() => dispatch(decreaseQuantity(item))}
           className="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition-colors font-bold text-lg w-8 h-8 flex items-center justify-center"
@@ -27,7 +27,7 @@ const CartItem = ({ item }) => {
           −
         </Button>
 
-        <Text className="text-xl font-bold min-w-[3rem] text-center">
+        <Text weight="bold" className="text-xl min-w-[3rem] text-center">
           {item.quantity}
         </Text>
 
@@ -40,7 +40,7 @@ const CartItem = ({ item }) => {
       </Flex>
 
       <Flex className="ml-4 text-right">
-        <Text className="text-lg font-bold text-gray-800">
+        <Text weight="bold" className="text-lg text-gray-800">
           ${(item.price * item.quantity).toFixed(2)}
         </Text>
       </Flex>
